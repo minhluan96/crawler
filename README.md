@@ -7,3 +7,13 @@
 
 
 > This crawler is not commercial
+
+
+**API endpoint**
+
+```
+POST /all
+POST /movie_details
+
+Body { url: "https://bilutv.org/danh-sach/phim-bo.html" }
+```
