@@ -6,7 +6,7 @@
   - :tv: bilu.tv (https://bilutv.org/)
 
 
-> This crawler is not commercial
+> This crawler is not for commercial purposes
 
 
 **API endpoint**
