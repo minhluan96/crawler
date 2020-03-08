@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -r esm index.js",
-    "dev": "nodemon -r esm index.js"
+    "start": "nodemon --experimental-modules index.mjs",
+    "dev": "nodemon -r esm index.mjs"
   },
   "author": "",
   "license": "ISC",
