@@ -146,8 +146,3 @@ app.use((err, req, res, next) => {
     error: err.message
   })
 });
-
-const port = process.env.port || 80;
-app.listen(port, () => {
-  console.log(`Server is running on ${port}`);
-});
