@@ -9,7 +9,12 @@ app.use(morgan('dev'));
 app.use(bodyParser('json'));
 
 const scrapAll = async (url) => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+    ],
+  });
   const page = await browser.newPage();
 
   await page.goto(url);
@@ -44,7 +49,12 @@ const isElementVisible = async (page, cssSelector) => {
 };
 
 const scrapStreamingUrl = async (url) => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+    ],
+  });
   try {
     const page = await browser.newPage();
 
@@ -65,7 +75,10 @@ const scrapStreamingUrl = async (url) => {
 };
 
 const scrapMovieInfo = async (url) => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: true, args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+    ]});
   let info = {};
 
   try {
