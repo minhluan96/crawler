@@ -8,6 +8,17 @@ const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser('json'));
 
+const specialNameMap = {
+  'Diễn viên': 'Actresses',
+  'Đạo diễn': 'Directors',
+  'Thể loại': 'Genres',
+  'Quốc gia': 'Nation',
+  'Thời lượng': 'Duration',
+  'Lượt xem': 'Views',
+  'Năm xuất bản': 'Released year',
+  'Điểm IMDb': 'IMDb score',
+};
+
 const scrapAll = async (url) => {
   const browser = await puppeteer.launch({
     args: [
@@ -107,6 +118,7 @@ const scrapMovieInfo = async (url) => {
       if (!labelTag) continue;
       let labelKey = await item.$eval('label', (label) => label.textContent);
       labelKey = labelKey.substring(0, labelKey.length - 1);
+      labelKey = specialNameMap[labelKey];
       const spanTag = await item.$('span');
       let labelValues = null;
       if (spanTag) {
