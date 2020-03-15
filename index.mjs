@@ -9,14 +9,14 @@ app.use(morgan('dev'));
 app.use(bodyParser('json'));
 
 const specialNameMap = {
-  'Diễn viên': 'Actresses',
-  'Đạo diễn': 'Directors',
-  'Thể loại': 'Genres',
-  'Quốc gia': 'Nation',
-  'Thời lượng': 'Duration',
-  'Lượt xem': 'Views',
-  'Năm xuất bản': 'Released year',
-  'Điểm IMDb': 'IMDb score',
+  'Diễn viên': 'actresses',
+  'Đạo diễn': 'directors',
+  'Thể loại': 'genres',
+  'Quốc gia': 'nation',
+  'Thời lượng': 'duration',
+  'Lượt xem': 'views',
+  'Năm xuất bản': 'releasedYear',
+  'Điểm IMDb': 'IMDbScore',
 };
 
 const scrapAll = async (url) => {
